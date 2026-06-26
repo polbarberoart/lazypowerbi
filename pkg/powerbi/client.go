@@ -13,7 +13,7 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/policy"
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/polbarbero/lazypowerbi/pkg/domain"
+	"github.com/polbarberoart/lazypowerbi/pkg/domain"
 )
 
 // powerBIScope is the OAuth scope required to call the Power BI REST API.

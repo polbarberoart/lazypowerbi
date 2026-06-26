@@ -1,11 +1,21 @@
 package powerbi
 
 import (
+	"context"
 	"encoding/base64"
 	"encoding/json"
 	"strings"
 	"testing"
+
+	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
+	"github.com/Azure/azure-sdk-for-go/sdk/azcore/policy"
 )
+
+type fakeCredential struct{}
+
+func (f *fakeCredential) GetToken(ctx context.Context, opts policy.TokenRequestOptions) (azcore.AccessToken, error) {
+	return azcore.AccessToken{Token: "fake-token"}, nil
+}
 
 func fakeJWT(t *testing.T, claims map[string]any) string {
 	t.Helper()
